@@ -1,0 +1,44 @@
+<html>
+	<head>
+<title>Tabs</title>
+		<script>
+			function openTabs()
+			{
+					var win1=window.open("http://www.google.com/");
+					var win2=window.open("https://www.w3schools.com/");
+					var win3=window.open("http://www.flipkart.com/");
+					var win4=window.open("https://www.amazon.com/");
+					var win5=window.open("https://www.snapdeal.com/");
+					setTimeout(
+					function() 
+					{
+						win1.window.close();
+					}, 10000);
+					setTimeout(
+					function() 
+					{
+						win2.window.close();
+					}, 8000);
+					setTimeout(
+					function() 
+					{
+						win3.window.close();
+					}, 6000);
+					setTimeout(
+					function() 
+					{
+						win4.window.close();
+					}, 4000);
+					setTimeout(
+					function() 
+					{
+						win5.window.close();
+					}, 2000);
+
+			} 
+		</script>
+	</head>
+	<body>
+		<button id=a onClick=openTabs()>Open tabs</button>
+	</body>
+</html>
