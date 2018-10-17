@@ -1,14 +1,13 @@
 <!DOCTYPE HTML>
 <head>
 <title>User Form</title>
-<script>
-var deatilArr=[];
-function checkEmail() {
-   var date = new Date();
-var timestamp = date.getTime();
 
-    var name=document.getElementById('txt1');
-    var email = document.getElementById('txt2');
+<script>
+var detailArray=[];
+function checkEmail() {
+	var timestamp = new Date().getTime();
+    var name=document.getElementById('username');
+    var email = document.getElementById('useremail');
     var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 	
     if (!filter.test(email.value)) {
@@ -18,38 +17,39 @@ var timestamp = date.getTime();
  	}
 	else
 	{
-		deatilArr.push(name.value,email.value,timestamp);
-		localStorage.setItem("Details",JSON.stringify(deatilArr));	
+		detailArray.push(name.value,email.value,timestamp);
+		localStorage.setItem("Details",JSON.stringify(detailArray));	
+		alert("user Added");
 	}
 }
 
 
 function ShowRecords()
 {
-document.write("<table>");
+document.write("<table border=1 border-collapse=collapse>");
 		document.write("<tr>");
 		document.write("<th>Name</th>");
 		document.write("<th>Email</th>");
 		document.write("<th>Current TimeStamp</th>");
 		document.write("</tr>");
-	for(let i=0;i<deatilArr.length;i++)
+		var userDetails=localStorage.getItem("Details").split(',');
+	for(let i=0;i<userDetails.length;i++)
          {
-		
 		document.write("<tr>");
-		document.write("<td>"+deatilArr[i]+"<td>");
-		document.write("<td>"+deatilArr[i++]+"</td>");
-		document.write("<td>"+deatilArr[i++]+"</td>");
+		document.write("<td>"+userDetails[i]+"</td>");
+		document.write("<td>"+userDetails[++i]+"</td>");
+		document.write("<td>"+userDetails[++i]+"</td>");
 		document.write("</tr>");
-		
          }
 document.write("</table>");
 }
 </script>
 </head>
 <body>
-Enter the Username: <input type="text" id="txt1" /><br />
-Enter the Email-id: <input type="text" id="txt2" /><br />
-<input type="button" onclick="checkEmail()" value="Submit"/><br />
+Enter the Username: <input type="text" id="username" /><br />
+<br>
+Enter the Email-id: <input type="text" id="useremail" /><br /><br>
+<input type="button" onclick="checkEmail()" value="Submit"/><br /><br>
 <input type="button" onclick="ShowRecords()" value="show"/><br />
 
 </body>

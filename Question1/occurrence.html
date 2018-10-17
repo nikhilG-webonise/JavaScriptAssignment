@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<script>
+			function checkOccurrence()
+			{
+				var inputString = document.Form1.numberSeries.value;
+    			var inputArray = new Array();
+		
+				inputArray = inputString.split(",");
+
+				for (a in inputArray ) 
+				{
+	    			inputArray[a] = parseInt(inputArray[a], 10);	
+				}
+				var count=0;
+
+				for(let i=0;i<10;i++)
+				{
+				for(let j=0;j<inputArray.length;j++)
+				{
+					if(i==inputArray[j])
+					count++;
+				}
+				if(count>0)
+				{
+					document.writeln(i+" : "+count);
+					count=0;
+				}
+			}
+		}
+		</script>
+	
+</head>
+<body>
+	<form name="Form1">
+		Enter comma Separated vaues:
+		<input type="text" name="numberSeries"><br><br>
+		<input type="submit" value="check" onclick="checkOccurrence()">
+	</form>
+</body>
+<html>
