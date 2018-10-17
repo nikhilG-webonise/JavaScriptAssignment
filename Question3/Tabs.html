@@ -3,42 +3,29 @@
 		<title>Tabs</title>
 			<script>
 				var timer1,timer2,timer3;
-function myFunction() 
-{
-	var win1=window.open("http://www.google.com");
-	var win2=window.open("http://www.flipkart.com");
-	var win3=window.open("http://www.weboniselab.com");
-	
-
-	timer1=setTimeout(function() 
-	{
-	    win1.window.close();
-    	}, 5000);
-
-      timer2=setTimeout(function()
-	{
-		win2.window.close();
-	}, 7000);
-	
-
-	 timer3=setTimeout(function() 
-	{
-	    win3.window.close();
-    	}, 9000);
-
-}
-
-function timeoutFun(){
-
-	clearTimeout(timer1);
-	clearTimeout(timer2);
-	clearTimeout(timer3);
-
-}
-			</script>
+				function myFunction(){
+				var win1=window.open("http://www.google.com");
+				var win2=window.open("http://www.flipkart.com");
+				var win3=window.open("http://www.weboniselab.com");
+					timer1=setTimeout(function() {
+	    		win1.window.close();
+    			}, 5000);
+     	 		timer2=setTimeout(function() {
+					win2.window.close();
+					}, 7000);
+					timer3=setTimeout(function() {
+	   			win3.window.close();
+    			}, 9000);
+				}
+				function timeoutFun() {
+				clearTimeout(timer1);
+				clearTimeout(timer2);
+				clearTimeout(timer3);
+				}
+		</script>
 	</head>
-		<body>
+	<body>
 		<button id=opens onClick=myFunction()>Open tabs</button>
 		<button id=pauses onClick=timeoutFun()>Pause tabs</button>
-		</body>
+	</body>
 </html>
