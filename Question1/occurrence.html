@@ -7,19 +7,19 @@
 				inputArray = inputString.split(",");
 
 				for (a in inputArray ) {
-					inputArray[a] = parseInt(inputArray[a], 10);
+				inputArray[a] = parseInt(inputArray[a], 10);
 				}
 
 				var count=0;
 				for(let i=0;i<10;i++)	{
-					for(let j=0;j<inputArray.length;j++)	{
+					for(let j=0;j<inputArray.length;j++) {
 						if(i === inputArray[j])
-							count++;
+						count++;
 					}
 
-					if(count>0)	{
-						document.writeln(i+" : "+count);
-						count=0;
+					if(count>0) {
+					document.writeln(i+" : "+count);
+					count=0;
 					}
 				}
 			}
